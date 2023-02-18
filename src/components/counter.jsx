@@ -4,7 +4,18 @@ import 'bootstrap/dist/css/bootstrap.css';
 class Counter extends Component {
     state = {
         count: 0,
-        tags: ['tag1', 'tag2', 'tag3']
+        tags: []
+    }
+
+    renderTag() {
+        if (this.state.tags.length === 0) return <p>there are no tags !</p>;
+        return (<ul>
+            {
+                this.state.tags.map((tag) => {
+                    return <li key={tag}>{tag}</li>
+                })
+            }
+        </ul>)
     }
 
     render() {
@@ -12,13 +23,8 @@ class Counter extends Component {
         return (
             <>
                 <span className={this.getBtnClasses()}>{this.state.count}</span>
-                <ul>
-                    {
-                        this.state.tags.map((tag) => {
-                            return <li key={tag}>{tag}</li>
-                        })
-                    }
-                </ul>
+                {this.state.tags.length === 0 && "Add a new tag !"}
+                {this.renderTag()}
             </>
         )
     }
