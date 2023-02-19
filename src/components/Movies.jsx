@@ -20,6 +20,9 @@ class Movies extends Component {
     }
 
     render() {
+        if (this.state.movies.length === 0) {
+            return <p>No more movies !</p>
+        }
         return (
             <div>
                 <table className="table">
