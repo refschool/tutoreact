@@ -20,11 +20,14 @@ class Movies extends Component {
     }
 
     render() {
+
+        const { length: count } = this.state.movies;
         if (this.state.movies.length === 0) {
             return <p>No more movies !</p>
         }
         return (
             <div>
+                <p>there are {count} movies</p>
                 <table className="table">
                     <thead>
                         <tr>
