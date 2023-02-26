@@ -3,25 +3,20 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 class Counter extends Component {
     state = {
-        count: 0,
+        value: this.props.value,
     }
 
-    constructor() {
-        super();
-        //une méthode parmis d'autres
-        this.handleClick = this.handleClick.bind(this)
-    }
-    handleClick() {
+    handleIncrement = () => {
         this.setState({
-            count: this.state.count + 1
+            value: this.state.value + 1
         })
     }
 
     render() {
         return (
             <div>
-                <div className={this.getBtnClasses()}>{this.state.count}</div>
-                <button onClick={this.handleClick}>Increment</button>
+                <div className={this.getBtnClasses()}>{this.state.value}</div>
+                <button onClick={this.handleIncrement}>Increment</button>
             </div>
         )
     }
@@ -31,7 +26,7 @@ class Counter extends Component {
 
     getBtnClasses() {
         let classes = "m-2 btn btn-";
-        classes += (this.state.count === 0) ? "warning" : "primary";
+        classes += (this.state.value === 0) ? "warning" : "primary";
         return classes;
     }
 
