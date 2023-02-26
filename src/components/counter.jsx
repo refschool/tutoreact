@@ -13,8 +13,10 @@ class Counter extends Component {
     }
 
     render() {
+
         return (
             <div>
+                {this.props.children}
                 <div className={this.getBtnClasses()}>{this.state.value}</div>
                 <button onClick={this.handleIncrement}>Increment</button>
             </div>
