@@ -8,6 +8,7 @@ class Counter extends Component {
 
     constructor() {
         super();
+        //une méthode parmis d'autres
         this.handleClick = this.handleClick.bind(this)
     }
     handleClick() {
@@ -18,10 +19,10 @@ class Counter extends Component {
 
     render() {
         return (
-            <>
+            <div>
                 <div className={this.getBtnClasses()}>{this.state.count}</div>
                 <button onClick={this.handleClick}>Increment</button>
-            </>
+            </div>
         )
     }
 
