@@ -1,13 +1,19 @@
-import './App.css';
-import Movies from './components/Movies';
+import React, { Component } from 'react';
+import NavBar from './components/navbar';
 import Counters from './components/counters';
+import './App.css';
 
-function App() {
-  return (
-    <div className="App container">
-      <Counters />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <>
+        <NavBar />
+        <main className="container">
+          <Counters />
+        </main>
+      </>
+    )
+  }
 }
 
 export default App;
