@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 class Counter extends Component {
     state = {
-        value: this.props.value,
+        value: this.props.counter.value,
     }
 
     handleIncrement = () => {
@@ -16,10 +16,9 @@ class Counter extends Component {
 
         return (
             <div>
-                {this.props.children}
                 <div className={this.getBtnClasses()}>{this.state.value}</div>
                 <button onClick={this.handleIncrement}>Increment</button>
-                <button onClick={() => this.props.onDelete(this.props.id)}>Delete</button>
+                <button onClick={() => this.props.onDelete(this.props.counter.id)}>Delete</button>
             </div>
         )
     }
